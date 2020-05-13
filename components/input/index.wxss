@@ -1,0 +1,71 @@
+/* components/input/index.wxss */
+@import '../../icon.wxss';
+.p-input{
+  background-color: #fff;
+  height: 87rpx;
+	font-size: 30rpx;
+  line-height: 87rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.p-input:after{
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 25rpx;
+  border-bottom: 1rpx solid #edeff2;
+}
+.p-input-content{
+	color: #606266;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.p-input-title{
+  font-weight: bold;
+	color: #303133;
+  min-width: 200rpx;
+}
+.p-input-content-input{
+  flex: 1;  
+}
+.p-input_picker:active{
+  background-color: #f8f8f8
+}
+.p-input_picker:disabled{
+  background-color: #fff
+}
+.p-input-content-input_uppercase{
+  text-transform: uppercase
+}
+.p-input-content-input_lowercase{
+  text-transform: lowercase
+}
+.p-input_textarea{
+  margin: 25rpx;
+  border: 1rpx solid #edeff2;
+  display: flex;
+  padding: 25rpx 25rpx;
+  flex-direction: column;
+}
+.p-input_textarea-textaera{
+  min-height: 180rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  width: calc(100vw - 100rpx);
+  overflow: scroll;
+}
+.p-input_textarea-textaera_placeholder{
+  color: #bfc2cc;
+}
+.p-input_textarea-footer{
+  color: #576b95;
+  font-size: 28rpx;
+  line-height: 46rpx;
+  display: flex;
+  justify-content: space-between;
+}

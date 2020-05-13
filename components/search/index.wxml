@@ -1,0 +1,36 @@
+
+<form
+report-submit
+bindsubmit="$collect"
+wx:if="{{isInput}}"
+>
+    <view class="m-search {{fixed ? 'm-search-fixed' : ''}}" >
+        <button class="init-button m-search_input" style="margin-top:7rpx" form-type="submit">
+            <input type="text" 
+            confirm-type="search"
+            adjust-position="{{false}}"
+            bindinput="bindinput"
+            bindconfrim="bindconfrim"
+            placeholder-class="m-search_input_placeholder" 
+            style="flex:1;text-align: left;" 
+            placeholder="{{placeholder}}"/>
+            <view style="width:20rpx"></view>
+            <view class="iconfont icon-search"
+            bindtap="bindtap"
+            ></view>
+        </button>
+    </view>
+</form>
+
+<form
+report-submit
+bindsubmit="$collect"
+wx:else
+>
+    <view class="m-search {{fixed ? 'm-search-fixed' : ''}}" bindtap="navigateTo" >
+        <button class="init-button m-search_input " form-type="submit">
+            <text class="m-search_input_placeholder">{{placeholder}}</text>
+            <view class="iconfont icon-search"></view>
+        </button>
+    </view>
+</form>

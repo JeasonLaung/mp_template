@@ -1,0 +1,43 @@
+<!--components/uploader/index.wxml-->
+<view class="weui-uploader__bd" wx:if="{{show}}">
+  <view class="weui-uploader__files">
+      <block wx:for="{{files}}" wx:key="index">
+          <view class="weui-uploader__file {{item.status !== 200 ? 'weui-uploader__file_status' : ''}}" bindtap="previewImage" data-url="{{item.temp}}"  data-index="{{index}}" catchlongpress="deletePhoto">
+              <image class="weui-uploader__img" src="{{item.temp}}" mode="aspectFill" />                   <view class="weui-uploader__file-content" wx:if="{{item.status == 0}}">
+                <view class="weui-loading"></view>
+              </view>
+              <view class="weui-uploader__file-content" wx:elif="{{item.status == 400}}">
+                  <icon type="warn" size="23" color="#F43530"></icon>
+              </view>
+              <!-- <view style="position:absolute;top:-10px;right:-10px" data-index="{{index}}" catchtap="deletePhoto">
+                <icon type="cancel" size="30" color="#DD5044" ></icon>
+              </view> -->
+          </view>
+      </block>
+
+      <!-- 完成上传 -->
+      <!-- <view class="weui-uploader__file">
+          <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+      </view>
+      <view class="weui-uploader__file">
+          <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+      </view> -->
+      <!-- 等待 -->
+      <!-- <view class="weui-uploader__file weui-uploader__file_status">
+          <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+          <view class="weui-uploader__file-content">
+            <view class="weui-loading"></view>
+          </view>
+      </view> -->
+      <!-- 错误 -->
+      <!-- <view class="weui-uploader__file weui-uploader__file_status">
+          <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+          <view class="weui-uploader__file-content">
+              <icon type="warn" size="23" color="#F43530"></icon>
+          </view>
+      </view> -->
+  </view>
+  <view class="weui-uploader__input-box" wx:if="{{maxlength !== files.length}}">
+      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+  </view>
+</view>

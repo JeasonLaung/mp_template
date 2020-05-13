@@ -1,0 +1,8 @@
+<!--index.wxml-->
+
+<input type="text" bindinput="bindinput" data-name="text" placeholder="请输入"/>
+
+<view>本地text:{{text}}</view>
+<view>全局TEXT:{{TEXT}}</view>
+
+<button bindtap="$go" data-url="/pages/text/index">去其他页</button>

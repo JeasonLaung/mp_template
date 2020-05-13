@@ -1,0 +1,22 @@
+/* components/cell/index.wxss */
+.p-cell{
+  background-color: #fff;
+  height: 86rpx;
+	font-size: 28rpx;
+  line-height: 87rpx;
+  margin-left: 25rpx;
+  padding-right: 25rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #edeff2;
+}
+.p-cell:active{
+  background-color: #f8f8f8
+}
+.p-cell-value{
+	color: #606266;
+}
+.p-cell-title{
+  font-weight: bold;
+	color: #303133;
+}

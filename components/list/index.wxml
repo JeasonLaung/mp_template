@@ -1,0 +1,13 @@
+<!--components/cell/index.wxml-->
+<view class="p-cell">
+  <view class="p-cell-title">
+    {{title}}
+    <slot name="left"/>
+  </view>
+  <view class="p-cell-value">
+    {{value}}
+    <slot name="right"/>
+    <view class="p-cell-is-link" wx:if="{{isLink}}">
+    </view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<!--components/cake/index.wxml-->
+<view class="p-cake">
+  <view class="p-cake-title">
+    <view class="p-cake-title-icon"></view>
+    {{title}}
+  </view>
+  <view class="p-cake-content">
+    {{content}}
+    <slot/>
+  </view>
+</view>

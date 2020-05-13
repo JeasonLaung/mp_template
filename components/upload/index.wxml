@@ -1,0 +1,25 @@
+<!--components/upload/index.wxml-->
+<view class="p-upload">
+<!-- 标题 -->
+  <view class="p-upload-header">
+    <view class="p-upload-header-index">{{index}}</view>
+    <view class="p-upload-header-title">{{title}}</view>
+  </view>
+  <!-- 容器 -->
+  <view class="p-upload-content" catchtap="chooseImage">
+    <!-- 选中后上传中 -->
+    <view wx:if="{{filePath}}" class="{{ status !== 200 ? 'p-upload-content-status' : ''}}">
+      <image class="p-upload-content_image" src="{{filePath}}" mode="aspectFill" />
+      <view class="p-upload-content-status_status" wx:if="{{status == 0}}">
+        <icon class="iconfont icon-loading"></icon>
+      </view>
+      <view class="p-upload-content-status_status" wx:elif="{{status == 400}}">
+        <icon type="warn" size="23" color="#F43530"></icon>
+      </view>
+    </view>
+    <!-- 未选中点击上传 -->
+    <view class="p-upload-content-place" wx:else>
+      <icon class="iconfont icon-camera"></icon>
+    </view>
+  </view>
+</view>

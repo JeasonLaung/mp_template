@@ -1,0 +1,10 @@
+<!--components/submit/index.wxml-->
+<form
+report-submit
+bindsubmit="$collect">
+  <view style="height:{{placeHeight || '64.5px'}}"></view>
+  <view class="p-submit">
+    <slot />
+    <button disabled="{{disabled}}" class="p-submit-button {{disabled ? 'p-submit-button-disabled' : ''}}" form-type="submit" catchtap="handleTap" open-type="{{openType}}">{{ title || '提交'}}</button>
+  </view>
+</form>

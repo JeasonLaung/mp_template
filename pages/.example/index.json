@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "孙悟空",
+  "backgroundColor": "#ffffff",
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "navigationStyle": "default",
+  "usingComponents": {}
+}

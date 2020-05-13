@@ -1,0 +1,27 @@
+/* components/cake/index.wxss */
+.p-cake-content{
+	font-size: 28rpx;
+	line-height: 36rpx;
+	color: #606266;
+}
+.p-cake-title{
+  height: 100rpx;
+  line-height: 100rpx;
+	font-size: 34rpx;
+	color: #303133;
+  font-weight: bold;
+}
+.p-cake-title-icon{
+  width: 8rpx;
+	height: 30rpx;
+  display: inline-block;
+	background-image: linear-gradient(0deg, 
+		#17b3c1 0%, 
+		#47d6b6 100%), 
+	linear-gradient(
+		#fe4858, 
+		#fe4858);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 4rpx;
+}

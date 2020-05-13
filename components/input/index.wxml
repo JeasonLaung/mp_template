@@ -1,0 +1,47 @@
+<!--components/input/index.wxml-->
+<picker mode="{{mode}}" range="{{range}}" range-key="{{rangeKey}}" bindchange="bindchange" bindcolumnchange="bindcolumnchange" wx:if="{{type == 'picker'}}" disabled="{{disabled}}">
+  <view class="p-input p-input_picker">
+    <view class="p-input-title">
+        {{title}}
+    </view>
+    <view class="p-input-content" >
+        <input placeholder="{{placeholder ? placeholder : '请输入' + title}}" class="p-input-content-input" value="{{value}}" bindinput="bindinput" bindblur="bindblur" disabled focus="{{focus}}" maxlength="{{maxlength}}" placeholder-class="p-input_textarea-textaera_placeholder"/>
+        <icon class="iconfont icon-bottom"></icon>
+    </view>
+  </view>
+</picker>
+
+<view class="p-input_textarea" wx:elif="{{type=='textarea'}}">
+  <textarea 
+  fixed="{{fixed}}"
+  value="{{value}}"
+  auto-height
+  focus="{{focus}}"
+  placeholder="{{placeholder ? placeholder : '请输入' + title}}"  
+  maxlength="{{maxlength ? maxlength : -1}}" 
+  bindinput="bindinput" 
+  bindblur="blurTextarea"
+  class="p-input_textarea-textaera"
+  placeholder-class="p-input_textarea-textaera_placeholder"
+  >
+  </textarea>
+  <view class="p-input_textarea-footer">
+    <view>{{maxlength > 0 ? value.length + '/' + maxlength : ''}}</view>
+    <view catchtap="bindreset">清空</view>
+  </view>
+</view>
+
+
+<view class="p-input" wx:else>
+  <view class="p-input-title">
+    {{title}}
+  </view>
+
+  <view class="p-input-content">
+    <view>
+      <slot name="left"/>
+    </view>
+    <input placeholder="{{placeholder ? placeholder : '请输入' + title}}" class="p-input-content-input" value="{{value}}" bindinput="bindinput" bindblur="bindblur" focus="{{focus}}" disabled="{{disabled}}" maxlength="{{maxlength}}" placeholder-class="p-input_textarea-textaera_placeholder"/>
+  </view>
+  
+</view>

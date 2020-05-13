@@ -1,0 +1,29 @@
+<!--components/agree/index.wxml-->
+<view class="weui-demo-dialog {{visible ? 'weui-demo-dialog_show' : ''}}">
+  <view class="weui-mask" bindtap="closeDialog" catchtap="_close"></view>
+  <view class="weui-half-screen-dialog" style="max-height:100%">
+    <view class="weui-half-screen-dialog__hd">
+      <view class="weui-half-screen-dialog__hd__side">
+        <view bindtap="_close" class="weui-icon-btn weui-icon-btn_close">关闭</view>
+      </view>
+      <view class="weui-half-screen-dialog__hd__main">
+        <text class="weui-half-screen-dialog__title">{{one.title}}</text>
+        <text class="weui-half-screen-dialog__subtitle">{{one.titleLittle}}</text>
+      </view>
+      <view class="weui-half-screen-dialog__hd__side">
+        <view class="weui-icon-btn weui-icon-btn_more" bindtap="_copy">更多</view>
+      </view>
+    </view>
+    <scroll-view scroll-y style="min-height:400rpx;max-height:calc(100vh - 500rpx)" class="weui-half-screen-dialog__bd">
+      <view class="weui-half-screen-dialog__desc">
+        {{one.contentTitle}}
+      </view>
+      <!-- 内容支持h5标签 -->
+      <rich-text class="weui-half-screen-dialog__tips" style="color: #333" nodes="{{one.content}}"></rich-text>
+    </scroll-view>
+    <view class="weui-half-screen-dialog__ft">
+        <button bindtap="_confirm" class="weui-btn weui-agree-btn weui-agree-btn-primary" wx:if="{{confirmText}}">{{confirmText}}</button>
+        <button bindtap="_cancel" class="weui-btn weui-agree-btn weui-agree-btn-default" wx:if="{{cancelText}}">{{cancelText}}</button>
+    </view>
+  </view>
+</view>

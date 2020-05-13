@@ -1,0 +1,45 @@
+/* components/agree/index.wxss */
+@import '../style/weui.wxss';
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:all .3s;
+  z-index:99;
+}
+.weui-half-screen-dialog{
+  transition:all .3s;
+  transform:translateY(100%);
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}
+.weui-demo-dialog_show .weui-half-screen-dialog{
+    transform:translateY(0);
+}
+
+.weui-agree-btn{
+  /* height: 75rpx;
+  border-radius: 10rpx;
+  width: 350rpx;
+  line-height: 75rpx;
+  font-size: 37rpx;
+  margin-top: 30rpx; */
+}
+.weui-agree-btn::after{
+  border: none;
+}
+.weui-agree-btn-primary{
+  background-color: #06c15f;
+  color: #ededed
+}
+.weui-agree-btn:active{
+  filter: brightness(90%);
+}
+.weui-agree-btn-default{
+  background-color: #ededed;
+  color: #06c15f
+}
+.weui-half-screen-dialog__ft{
+  display: flex;
+}

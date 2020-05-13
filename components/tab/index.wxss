@@ -1,0 +1,16 @@
+/* components/tab/index.wxss */
+.p-tab{
+  font-size: 26rpx;
+  flex:1;
+  color: #303133;
+	display:flex;
+	height: 84rpx;
+	position: relative;
+	z-index: 3;
+	justify-content: center;
+	text-align: center;
+}
+
+.p-tab-current{
+	color: #493b9d;
+}

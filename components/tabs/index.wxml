@@ -1,0 +1,26 @@
+<!--components/tabs/index.wxml-->
+<scroll-view 
+wx:if="{{scroll}}"
+class="p-tabs p-tabs-scroll {{fixed ? 'p-tabs_fixed' : ''}} {{scroll ? 'p-tabs-scroll' : ''}}"
+scroll-x
+scroll-into-view="{{scrollIntoView}}"
+scroll-left="{{scrollLeft}}"
+enable-flex="{{!scroll}}"
+>
+  <view
+  style="width:calc(100% / {{tabCount || 1}});transform:translateX({{750 / tabCount * current}}rpx)"
+  class="p-tabs-slide"></view>
+  <slot />
+  <view
+  class="p-tabs-slide"></view>
+</scroll-view>
+
+<view wx:else
+class="p-tabs {{fixed ? 'p-tabs_fixed' : ''}}">
+  <view
+  style="width:calc(100% / {{tabCount || 1}});transform:translateX({{750 / tabCount * current}}rpx)"
+  class="p-tabs-slide"></view>
+  <slot />
+</view>
+
+<view style="height:84rpx;" wx:if="{{fixed}}"></view>

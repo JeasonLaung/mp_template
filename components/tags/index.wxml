@@ -1,0 +1,47 @@
+<!--components/tags/index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell skill-box  {{column ? 'skill-box-column' : ''}}">
+    <view class="skill" wx:for="{{tags}}" wx:key="index" catchtap="showUpdateModel" data-index="{{index}}">
+      {{item}} 
+      <view style="display:inline-block;color:#fff" class="iconfont icon-close-fill" catchtap="delTag" data-index="{{index}}"/>
+    </view>
+    <view class="btn-add" catchtap="showModal" wx:if="{{maxlength == -1 ? true : maxlength > tags.length}}">+ 添加</view>
+  </view>
+</view>
+<modal
+style="z-index:9999;position:fixed"
+bindcancel="_bindcancel"
+bindconfirm="_bindconfirm"
+wx:if="{{modalShow}}"
+title="{{modalTitle||'添加标签'}}"
+>
+  <input 
+  cursor-spacing="150"
+  bindconfirm="_bindconfirm"
+  type="text" 
+  maxlength="{{tagMaxlength}}"
+  placeholder="{{tagPlaceholder}}" 
+  focus="{{true}}" 
+  bindinput="_bindinput" 
+  style="border-bottom:1rpx solid #efefef"/>
+</modal>
+
+
+<modal
+style="z-index:9999;position:fixed"
+bindcancel="_bindcancel"
+bindconfirm="saveTag"
+wx:if="{{modalShow2}}"
+title="{{modelTitle2||'更改标签'}}"
+>
+  <input 
+  cursor-spacing="150"
+  bindconfirm="saveTag"
+  type="text" 
+  value="{{tempValue}}"
+  maxlength="{{tagMaxlength}}"
+  placeholder="{{tagPlaceholder}}" 
+  bindinput="_bindinput"
+  focus="{{true}}" 
+  style="border-bottom:1rpx solid #efefef"/>
+</modal>

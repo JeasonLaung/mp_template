@@ -1,0 +1,13 @@
+/* components/panel/index.wxss */
+.p-panel{
+  line-height: 1;
+}
+.p-panel-title{
+  padding: 30rpx 25rpx 16rpx 25rpx;
+  background-color: #f5f7fa;
+	font-size: 28rpx;
+	letter-spacing: 1rpx;
+  color: #909399;
+  display: flex;
+  justify-content: space-between;
+}

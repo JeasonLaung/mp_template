@@ -1,0 +1,8 @@
+<!--components/panel/index.wxml-->
+<view class="p-panel">
+  <view class="p-panel-title">
+    {{title}}
+    <view>{{value}}</view>
+  </view>
+  <slot />
+</view>

@@ -1,0 +1,4 @@
+<!--components/tab/index.wxml-->
+<view class="p-tab {{current ? 'p-tab-current': ''}}" catchtap="handleClick" style="width:calc(750rpx / {{tabCount || 1}});">
+  {{title}}
+</view>
