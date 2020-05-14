@@ -13,6 +13,9 @@ export const MAP_HOST = ''
 // 请求api地址
 export const REQUEST_API = REQUEST_HOST
 
+// webscoket地址
+export const WEBSOCKET_HOST = WEBSOCKET_HOST
+
 // 签名名称
 export const SIGNATURE_NAME = 'x-signature'
 

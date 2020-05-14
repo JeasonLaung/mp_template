@@ -106,3 +106,31 @@ export const wxPhone = (data = {}) => {
     })
   })
 }
+
+
+export const getAccount = () => {
+  return new Promise((resolve, reject) => {
+    axios({
+      url: '/rental/user/getAccount'
+    }).then(res => {
+      store.commit('setUserInfo', res)
+      resolve(res)
+    }).catch(res => {
+      reject(res)
+    })
+  })
+}
+export const logout = () => {
+  return new Promise((resolve, reject) => {
+    axios({
+      url: '/rental/user/logout'
+    }).then(res => {
+      store.commit('setUserInfo', {})
+      $go('/pages/login/index', 'reLaunch').then(res => {
+        resolve(res)
+      })
+    }).catch(res => {
+      reject(res)
+    })
+  })
+}

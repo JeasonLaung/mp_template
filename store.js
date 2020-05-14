@@ -3,11 +3,14 @@ import Vuex from "./utils/vuex";
 
 export default Vuex.store({
   states: {
-    TEXT: '12346789'
+    userInfo: {}
   },
   mutations: {
-    setText (states, val) {
-      states.TEXT = val
+    setUserInfo(state, data) {
+      state.userInfo = data
+    },
+    clearUserInfo(state) {
+      state.userInfo = {}
     }
   }
 })

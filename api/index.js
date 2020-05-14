@@ -1,32 +1,5 @@
 import axios from '../utils/axios'
 import cookie from '../utils/cookie.js'
-import { ACTION_RESPONSE } from '../config/index'
-
-export const action = (formId) => {
-  if (formId === 'the formId is a mock one') {
-    return false
-  }
-  axios({
-    error: false,
-    method: 'POST',
-    url: ACTION_RESPONSE,
-    data: {
-      formId
-    }
-  })
-}
-
-export const orc = (data = {}) => {
-  let { filePath } = data
-  delete (data['filePath'])
-  return axios({
-    url: '/rental/upload/upload',
-    upload: true,
-    filePath,
-    name: 'image',
-    data
-  })
-}
 
 export const upload = (data = {}) => {
   let { filePath } = data
@@ -54,7 +27,7 @@ export const report = (data = {}) => {
     method: 'POST'
   })
 }
-
+// 获取百度ORC token
 export const getOrcToken = () => {
   return new Promise((resolve, reject) => {
     let orc = cookie.get('BAIDU_ORC_TOKEN') || {}
